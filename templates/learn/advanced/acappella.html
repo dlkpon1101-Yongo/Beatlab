@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Acappella 与 Mashup 思路 | BEATLAB{% endblock %}
+{% block content %}
+<div class="min-h-screen">
+    {% with color='pink', icon='fas fa-microphone-alt', badge='实战篇 · 创意', title='Acappella 与 Mashup 思路', subtitle='用人声和 Mashup 让你的 Mix 更有记忆点。' %}{% include 'components/page_header.html' %}{% endwith %}
+    <div class="container mx-auto px-8 py-16 max-w-4xl space-y-6">
+        {% with title='获取方式', color='pink', body='''<p>优先搜索“歌曲名 + acappella”。找不到时可以使用 UVR5 提取人声，RX10 可用于简单处理和清理音频。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='Drop-Drop 加花', color='pink', body='''<p>在 Drop 切换前放入一句辨识度高的人声，可以让切歌更有记忆点。注意人声不要和原曲主唱同时冲突。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='风险控制', color='pink', body='''<p>Acappella 音量通常不要过大，先用耳机监听确认调性、节奏和歌词位置，再推到主声道。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        <div class="mt-16 flex justify-between items-center border-t border-white/5 pt-8">
+            <a href="{{ url_for('learn_advanced') }}" class="flex items-center gap-2 border border-gray-700 hover:border-pink-500 px-6 py-3 rounded-full font-bold transition"><i class="fas fa-arrow-left"></i> 返回目录</a>
+            <a href="{{ url_for('learn_resources') }}" class="flex items-center gap-2 bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-full font-bold transition">资料查找 <i class="fas fa-link"></i></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

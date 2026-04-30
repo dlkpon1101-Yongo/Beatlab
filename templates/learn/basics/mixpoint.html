@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}入歌点与出歌点 | BEATLAB{% endblock %}
+{% block content %}
+<div class="min-h-screen">
+    {% with color='purple', icon='fas fa-map-marker-alt', badge='基础篇 · 接歌', title='入歌点与出歌点', subtitle='学会提前规划第二首歌从哪里进，第一首歌在哪里退。' %}{% include 'components/page_header.html' %}{% endwith %}
+    <div class="container mx-auto px-8 py-16 max-w-4xl space-y-6">
+        {% with title='入歌点', color='purple', body='''<p>入歌点是第二首歌开始播放的位置，它不一定是歌曲开头。对于 DJ 来说，好的入歌点通常要满足：节奏清晰、没有过多人声、容易和上一首对齐。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='出歌点', color='purple', body='''<p>出歌点是第一首歌完全退出的位置。基础阶段可以优先选择 Outro、Breakdown 前或 Drop 结束后作为出歌点。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='实战流程', color='purple', body='''<p>先在两首歌上分别标记 Cue 点，再规划：第二首从哪里进、第一首在哪里退、低频在哪一拍交换、FX 是否需要辅助退出。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        <div class="mt-16 flex justify-between items-center border-t border-white/5 pt-8">
+            <a href="{{ url_for('learn_basics') }}" class="flex items-center gap-2 border border-gray-700 hover:border-purple-500 px-6 py-3 rounded-full font-bold transition"><i class="fas fa-arrow-left"></i> 返回目录</a>
+            <a href="{{ url_for('learn_resources') }}" class="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-full font-bold transition">资料查找 <i class="fas fa-link"></i></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

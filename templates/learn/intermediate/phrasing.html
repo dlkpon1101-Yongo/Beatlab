@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}常见 EDM 混音套路与能量管理 | BEATLAB{% endblock %}
+{% block content %}
+<div class="min-h-screen">
+    {% with color='blue', icon='fas fa-chart-line', badge='进阶篇 · 结构应用', title='常见 EDM 混音套路与能量管理', subtitle='把歌曲结构用于真正的接歌决策。' %}{% include 'components/page_header.html' %}{% endwith %}
+    <div class="container mx-auto px-8 py-16 max-w-4xl space-y-6">
+        {% with title='Intro - Outro', color='blue', body='''<p>最稳定的新手套路：第二首的 Intro 接第一首的 Outro，结构清晰、不容易撞人声或撞 Drop。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='Drop - Drop', color='blue', body='''<p>更强势的实战套路，适合制造瞬间爆发。可以直接飞歌，也可以用 Cue 或 Acappella 加花，但要注意调性和能量是否匹配。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='Breakdown - Breakdown', color='blue', body='''<p>用第二首的 Breakdown 替换第一首的 Breakdown，适合做情绪转换。频段不冲突时，也可以短时间叠加两个 Breakdown。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='Drop - Break', color='blue', body='''<p>常用 Echo 或 Reverb 结束上一首 Drop，再让第二首 Break / Breakdown 进入，制造从高能到留白的对比。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        <div class="mt-16 flex justify-between items-center border-t border-white/5 pt-8">
+            <a href="{{ url_for('learn_intermediate') }}" class="flex items-center gap-2 border border-gray-700 hover:border-blue-500 px-6 py-3 rounded-full font-bold transition"><i class="fas fa-arrow-left"></i> 返回目录</a>
+            <a href="{{ url_for('learn_resources') }}" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-bold transition">资料查找 <i class="fas fa-link"></i></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}EQ 与 Isolator 模式 | BEATLAB{% endblock %}
+{% block content %}
+<div class="min-h-screen">
+    {% with color='blue', icon='fas fa-sliders-h', badge='进阶篇 · EQ', title='EQ 与 Isolator 模式', subtitle='通过三频控制，让两首歌的鼓、贝斯、人声和高频元素不互相打架。' %}{% include 'components/page_header.html' %}{% endwith %}
+    <div class="container mx-auto px-8 py-16 max-w-4xl space-y-6">
+        {% with title='EQ 模式', color='blue', body='''<p>标准 EQ 会对高、中、低频进行增强或削弱，即使全部向左旋也通常还能听到声音，只是变小。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='Isolator 模式', color='blue', body='''<p>Isolator 会更彻底地切掉对应频段，可以把 High、Mid、Low 想成三个独立的音量推子。适合做更干净的频段分离。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='低频交换', color='blue', body='''<p>混入第二首歌时先削掉第二首低频，等到合适拍点再把第一首低频切掉，同时恢复第二首低频，避免两首歌的 Kick 和 Bass 重叠。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        <div class="mt-16 flex justify-between items-center border-t border-white/5 pt-8">
+            <a href="{{ url_for('learn_intermediate') }}" class="flex items-center gap-2 border border-gray-700 hover:border-blue-500 px-6 py-3 rounded-full font-bold transition"><i class="fas fa-arrow-left"></i> 返回目录</a>
+            <a href="{{ url_for('learn_resources') }}" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-bold transition">资料查找 <i class="fas fa-link"></i></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

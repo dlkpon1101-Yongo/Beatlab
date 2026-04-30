@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}歌曲结构分析 | BEATLAB{% endblock %}
+{% block content %}
+<div class="min-h-screen">
+    {% with color='purple', icon='fas fa-wave-square', badge='基础篇 · 结构', title='歌曲结构分析', subtitle='用 Animals 作为例子，训练学生听出 Intro、Breakdown、Build Up、Drop 与 Outro。' %}{% include 'components/page_header.html' %}{% endwith %}
+    <div class="container mx-auto px-8 py-16 max-w-4xl space-y-6">
+        {% with title='学习目标', color='purple', body='''<p>完成本节后，学生需要能听出一首 EDM 的主要结构，并解释每个段落在 DJ 混音中的作用。</p><ul class="list-disc list-inside text-gray-400"><li>Intro：适合入歌或铺节奏。</li><li>Breakdown：鼓点减少，情绪铺垫。</li><li>Build Up：能量上升，准备进入 Drop。</li><li>Drop：能量爆发，是舞池反应最强的部分。</li><li>Outro：适合混出或准备下一首。</li></ul>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='Animals 示例教学', color='purple', body='''<p class="text-gray-400">示例标记用于教学参考：0:00-0:30 Intro，0:30-1:00 Breakdown，1:00-1:15 Build Up，1:15-1:45 Drop。不同版本可能会有几秒误差。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% include 'components/waveform_player.html' %}
+        <div class="mt-16 flex justify-between items-center border-t border-white/5 pt-8">
+            <a href="{{ url_for('learn_basics') }}" class="flex items-center gap-2 border border-gray-700 hover:border-purple-500 px-6 py-3 rounded-full font-bold transition"><i class="fas fa-arrow-left"></i> 返回目录</a>
+            <a href="{{ url_for('learn_resources') }}" class="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-full font-bold transition">资料查找 <i class="fas fa-link"></i></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_js %}<script src="{{ url_for('static', filename='js/waveform.js') }}"></script>{% endblock %}

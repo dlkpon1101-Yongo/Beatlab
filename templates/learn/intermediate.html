@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}进阶篇 | BEATLAB{% endblock %}
+{% block content %}
+<div class="min-h-screen">
+    {% with color='blue', icon='fas fa-layer-group', badge='第二阶段', title='进阶篇', subtitle='深入 EQ / Isolator、Filter、Echo / Reverb 与 Phrasing，让你的 Mix 更干净、更有层次。' %}{% include 'components/page_header.html' %}{% endwith %}
+    <div class="container mx-auto px-8 py-16 max-w-4xl">
+        <div class="space-y-6">
+            {% with href=url_for('learn_intermediate_eq'), color='blue', icon='fas fa-sliders-h', title='EQ 与 Isolator 模式', desc='理解 Low、Mid、High 三频在混音中的作用，学会用低频交换避免两首歌的 Kick 和 Bass 打架。', meta='频段控制 · 10 分钟' %}{% include 'components/lesson_card.html' %}{% endwith %}
+            {% with href=url_for('learn_intermediate_filter'), color='blue', icon='fas fa-filter', title='Filter 混音技巧', desc='学习高通/低通 Filter 的基本声音变化，用它做更自然的退出、进入和 Build Up 张力。', meta='过渡技巧 · 8 分钟' %}{% include 'components/lesson_card.html' %}{% endwith %}
+            {% with href=url_for('learn_intermediate_fx'), color='blue', icon='fas fa-wave-square', title='Echo / Delay / Reverb 过渡', desc='用 Echo、Delay 和 Reverb 做平滑过渡，尤其适合 Drop-Break、换 BPM 或制造空间感。', meta='FX 实战 · 12 分钟' %}{% include 'components/lesson_card.html' %}{% endwith %}
+            {% with href=url_for('learn_intermediate_phrasing'), color='blue', icon='fas fa-chart-line', title='常见 EDM 混音套路与能量管理', desc='包括 Intro-Outro、Drop-Drop、Breakdown-Breakdown、Middlebreak-Intro 等实战衔接方式。', meta='结构应用 · 12 分钟' %}{% include 'components/lesson_card.html' %}{% endwith %}
+        </div>
+        <div class="mt-16 flex justify-between items-center border-t border-white/5 pt-8"><a href="{{ url_for('learn_basics') }}" class="flex items-center gap-2 border border-gray-700 hover:border-purple-500 px-6 py-3 rounded-full font-bold transition"><i class="fas fa-arrow-left"></i> 返回：基础入门</a><a href="{{ url_for('learn_advanced') }}" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-bold transition">下一阶段：实战篇 <i class="fas fa-arrow-right"></i></a></div>
+    </div>
+</div>
+{% endblock %}

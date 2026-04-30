@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}基础知识入门 | BEATLAB{% endblock %}
+{% block content %}
+<div class="min-h-screen">
+    {% with color='purple', icon='fas fa-seedling', badge='第一阶段', title='基础知识入门', subtitle='从歌曲结构、节拍逻辑、入歌点与设备术语开始，建立你的 DJ 基础知识体系。' %}{% include 'components/page_header.html' %}{% endwith %}
+    <div class="container mx-auto px-8 py-16 max-w-4xl">
+        <div class="space-y-6">
+            {% with href=url_for('learn_basic_structure'), color='purple', icon='fas fa-wave-square', title='歌曲结构：Intro / Breakdown / Build Up / Drop / Outro', desc='学习识别 EDM 的基础段落，并用 Martin Garrix - Animals 作为例子分析每一段的功能。', meta='基础概念 · 10 分钟 · 含播放器' %}{% include 'components/lesson_card.html' %}{% endwith %}
+            {% with href=url_for('learn_basic_beat'), color='purple', icon='fas fa-drum', title='拍子与 16 拍接歌逻辑', desc='掌握 4 拍、8 拍、16 拍的基础节奏单位，理解为什么多数 DJ 会用 16 拍作为常见接歌区域。', meta='节奏训练 · 8 分钟' %}{% include 'components/lesson_card.html' %}{% endwith %}
+            {% with href=url_for('learn_basic_mixpoint'), color='purple', icon='fas fa-map-marker-alt', title='入歌点与出歌点', desc='理解第二首歌从哪里开始播放、第一首歌在哪里退出，建立最基本的 Mix 规划能力。', meta='接歌基础 · 6 分钟' %}{% include 'components/lesson_card.html' %}{% endwith %}
+            {% with href=url_for('learn_basic_terms'), color='purple', icon='fas fa-headphones', title='DJ 设备与常用英文', desc='认识 Cue、Loop、Gain、Filter、EQ、Channel Fader、Crossfader 等常用词汇，降低上手设备和软件时的理解成本。', meta='术语整理 · 10 分钟' %}{% include 'components/lesson_card.html' %}{% endwith %}
+        </div>
+        <div class="mt-16 flex justify-between items-center border-t border-white/5 pt-8"><div></div><a href="{{ url_for('learn_intermediate') }}" class="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-full font-bold transition neon-border">下一阶段：进阶篇 <i class="fas fa-arrow-right"></i></a></div>
+    </div>
+</div>
+{% endblock %}

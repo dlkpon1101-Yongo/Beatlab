@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}DJ Academy | 掌控你的节拍{% endblock %}
+
+{% block content %}
+
+    <!-- HERO -->
+    <header class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20 z-0"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-6xl md:text-8xl font-orbitron font-bold mb-4 tracking-tighter italic">
+                FROM <span class="text-purple-500">ZERO</span> TO <span class="text-blue-500">HERO</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
+                系统化掌握 Beatmatching、混音技巧与现场控制，开启你的 DJ 之路。
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#courses" class="bg-white text-black px-10 py-4 rounded-lg font-bold text-lg hover:bg-purple-500 hover:text-white transition-all">
+                    浏览免费课程
+                </a>
+                <a href="{{ url_for('learn_intermediate') }}" class="border border-gray-600 px-10 py-4 rounded-lg font-bold text-lg hover:border-purple-500 transition">
+                    查看进阶大纲
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- WHY US -->
+    <section class="py-20 bg-zinc-950">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div class="flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 bg-zinc-800 rounded-full border-8 border-zinc-900 flex items-center justify-center vinyl-spin">
+                    <div class="w-24 h-24 bg-purple-600 rounded-full border-4 border-black flex items-center justify-center">
+                        <div class="w-4 h-4 bg-white rounded-full"></div>
+                    </div>
+                    <div class="absolute inset-0 rounded-full border border-white/10"></div>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-4xl font-orbitron font-bold mb-6 text-purple-400">为什么选择我们？</h2>
+                <ul class="space-y-4 text-lg text-gray-300">
+                    <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i> 手把手教学：从 Rekordbox 基础到 CDJ 进阶。</li>
+                    <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i> 乐理基础：专为 DJ 设计的 EQ 调节与调性混音。</li>
+                    <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-3 text-green-500"></i> 实战演练：提供各曲风的高质量练习素材。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSES -->
+    <section id="courses" class="py-24 container mx-auto px-4">
+        <h3 class="text-3xl font-orbitron font-bold mb-12 text-center">课程体系</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-zinc-900 p-8 rounded-2xl border border-white/5 hover:border-purple-500/50 transition-all group">
+                <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                    <i class="fas fa-sliders-h text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">DJ 基础理论</h4>
+                <p class="text-gray-400 mb-6">掌握 Bpm、Bar 和拍子结构，理解什么是真正的同步。</p>
+                <a href="{{ url_for('learn_basics') }}" class="text-purple-400 font-bold hover:underline">立即开始 →</a>
+            </div>
+            <div class="bg-zinc-900 p-8 rounded-2xl border border-white/5 hover:border-blue-500/50 transition-all group">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                    <i class="fas fa-wave-square text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">EQ & 混音技巧</h4>
+                <p class="text-gray-400 mb-6">学习如何丝滑地在两首歌之间切换，不留痕迹。</p>
+                <a href="{{ url_for('learn_intermediate') }}" class="text-blue-400 font-bold hover:underline">立即开始 →</a>
+            </div>
+            <div class="bg-zinc-900 p-8 rounded-2xl border border-white/5 hover:border-pink-500/50 transition-all group">
+                <div class="w-12 h-12 bg-pink-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                    <i class="fas fa-headphones-alt text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">职业进阶</h4>
+                <p class="text-gray-400 mb-6">舞台表现力、歌单编排以及如何对接俱乐部演出。</p>
+                <a href="{{ url_for('learn_advanced') }}" class="text-pink-400 font-bold hover:underline">立即开始 →</a>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

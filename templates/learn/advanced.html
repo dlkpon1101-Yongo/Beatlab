@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}实战篇 | BEATLAB{% endblock %}
+{% block content %}
+<div class="min-h-screen">
+    {% with color='pink', icon='fas fa-fire', badge='第三阶段', title='实战篇', subtitle='把基础技术转化为完整 Set、舞台表现、资源整理和可复盘的 Mix 作品。' %}{% include 'components/page_header.html' %}{% endwith %}
+    <div class="container mx-auto px-8 py-16 max-w-4xl">
+        <div class="space-y-6">
+            {% with href=url_for('learn_advanced_setlist'), color='pink', icon='fas fa-list', title='Set List 编排与现场参考', desc='使用 1001Tracklists 和现场录屏分析职业 DJ 的歌单顺序、能量分布和 Drop 安排。', meta='编排训练 · 10 分钟' %}{% include 'components/lesson_card.html' %}{% endwith %}
+            {% with href=url_for('learn_advanced_acappella'), color='pink', icon='fas fa-microphone-alt', title='Acappella 与 Mashup 思路', desc='学习通过 YouTube 搜索 Acappella，或使用 UVR5 / RX10 提取人声，用于 Drop-Drop 加花。', meta='创意混音 · 12 分钟' %}{% include 'components/lesson_card.html' %}{% endwith %}
+            {% with href=url_for('learn_advanced_performance'), color='pink', icon='fas fa-bolt', title='现场能量控制', desc='根据观众反应决定是否快速过渡、延长 Breakdown、提前 Drop，避免整场能量过满或过空。', meta='现场判断 · 8 分钟' %}{% include 'components/lesson_card.html' %}{% endwith %}
+            {% with href=url_for('learn_advanced_recording'), color='pink', icon='fas fa-record-vinyl', title='录制与复盘你的 Mix', desc='录制自己的 Set，检查入歌点、出歌点、EQ 切换、FX 使用是否自然，并持续优化歌单。', meta='作品输出 · 15 分钟' %}{% include 'components/lesson_card.html' %}{% endwith %}
+        </div>
+        <div class="mt-16 flex justify-between items-center border-t border-white/5 pt-8"><a href="{{ url_for('learn_intermediate') }}" class="flex items-center gap-2 border border-gray-700 hover:border-blue-500 px-6 py-3 rounded-full font-bold transition"><i class="fas fa-arrow-left"></i> 返回：进阶篇</a><a href="{{ url_for('learn_resources') }}" class="flex items-center gap-2 bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-full font-bold transition">资料查找 <i class="fas fa-arrow-right"></i></a></div>
+    </div>
+</div>
+{% endblock %}
