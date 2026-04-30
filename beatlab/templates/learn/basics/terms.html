@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}DJ 设备与常用英文 | BEATLAB{% endblock %}
+{% block content %}
+<div class="min-h-screen">
+    {% with color='purple', icon='fas fa-headphones', badge='基础篇 · 术语', title='DJ 设备与常用英文', subtitle='快速认识 DJ 控制器、混音台和软件中最常见的英文词汇。' %}{% include 'components/page_header.html' %}{% endwith %}
+    <div class="container mx-auto px-8 py-16 max-w-4xl space-y-6">
+        {% with title='基础控制', color='purple', body='''<div class="grid md:grid-cols-2 gap-4"><p><b>Cue</b>：记忆点 / 监听点</p><p><b>Loop</b>：循环</p><p><b>Play / Pause</b>：播放 / 暂停</p><p><b>Pitch</b>：速度调节杆</p><p><b>Track</b>：音轨</p><p><b>Playlist</b>：播放列表</p></div>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='混音台相关', color='purple', body='''<div class="grid md:grid-cols-2 gap-4"><p><b>Gain / Trim</b>：增益</p><p><b>Channel Fader</b>：通道推子</p><p><b>Crossfader</b>：交叉推子</p><p><b>EQ</b>：均衡</p><p><b>High / Mid / Low</b>：高 / 中 / 低频</p><p><b>Master</b>：主输出音量</p></div>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='效果器相关', color='purple', body='''<div class="grid md:grid-cols-2 gap-4"><p><b>Filter</b>：滤波</p><p><b>Echo</b>：回声</p><p><b>Reverb</b>：混响</p><p><b>Flanger</b>：镶边效果</p></div>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        <div class="mt-16 flex justify-between items-center border-t border-white/5 pt-8">
+            <a href="{{ url_for('learn_basics') }}" class="flex items-center gap-2 border border-gray-700 hover:border-purple-500 px-6 py-3 rounded-full font-bold transition"><i class="fas fa-arrow-left"></i> 返回目录</a>
+            <a href="{{ url_for('learn_resources') }}" class="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-full font-bold transition">资料查找 <i class="fas fa-link"></i></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

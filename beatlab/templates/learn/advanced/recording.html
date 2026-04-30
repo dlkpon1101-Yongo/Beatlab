@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}录制与复盘你的 Mix | BEATLAB{% endblock %}
+{% block content %}
+<div class="min-h-screen">
+    {% with color='pink', icon='fas fa-record-vinyl', badge='实战篇 · 输出', title='录制与复盘你的 Mix', subtitle='把练习变成可展示的作品。' %}{% include 'components/page_header.html' %}{% endwith %}
+    <div class="container mx-auto px-8 py-16 max-w-4xl space-y-6">
+        {% with title='录制前准备', color='pink', body='''<p>确认所有歌曲音量接近，Cue 点正确，歌单顺序清晰。录制前先完整走一遍关键切歌点。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='复盘检查表', color='pink', body='''<ul class="list-disc list-inside text-gray-400"><li>入歌点是否过早或过晚？</li><li>低频交换是否干净？</li><li>FX 是否过度使用？</li><li>整场能量是否有起伏？</li></ul>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        {% with title='发布建议', color='pink', body='''<p>作品发布前写清楚 Set 风格、BPM 范围、代表曲目和适合场景。这样比单纯上传一个音频更专业。</p>''' %}{% include 'components/content_card.html' %}{% endwith %}
+        <div class="mt-16 flex justify-between items-center border-t border-white/5 pt-8">
+            <a href="{{ url_for('learn_advanced') }}" class="flex items-center gap-2 border border-gray-700 hover:border-pink-500 px-6 py-3 rounded-full font-bold transition"><i class="fas fa-arrow-left"></i> 返回目录</a>
+            <a href="{{ url_for('learn_resources') }}" class="flex items-center gap-2 bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-full font-bold transition">资料查找 <i class="fas fa-link"></i></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
